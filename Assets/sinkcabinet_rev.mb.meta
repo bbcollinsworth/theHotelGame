@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: f4c115729b974624c8b395fea451bb09
+timeCreated: 1449202956
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: LAVABO_STRADA_GRIFO_ALPLUS_TRES:Mesh
+    100002: polySurface1
+    100004: polySurface10
+    100006: polySurface11
+    100008: polySurface12
+    100010: polySurface13
+    100012: polySurface14
+    100014: polySurface15
+    100016: polySurface2
+    100018: polySurface3
+    100020: polySurface4
+    100022: polySurface5
+    100024: polySurface9
+    100026: sink2
+    100028: sink:object_10
+    100030: sink:object_11
+    100032: sink:object_12
+    100034: sink:object_15
+    100036: sink:object_16
+    100038: sink:object_17
+    100040: sink:object_18
+    100042: sink:object_19
+    100044: sink:object_20
+    100046: sink:object_21
+    100048: sink:object_22
+    100050: sink:object_23
+    100052: sink:object_5
+    100054: sink:object_6
+    100056: sink:object_7
+    100058: sink:object_8
+    100060: sink:object_9
+    100062: sink:transform1
+    100064: sink:transform10
+    100066: sink:transform11
+    100068: sink:transform12
+    100070: sink:transform13
+    100072: sink:transform14
+    100074: sink:transform15
+    100076: sink:transform16
+    100078: sink:transform17
+    100080: sink:transform18
+    100082: sink:transform19
+    100084: sink:transform2
+    100086: sink:transform20
+    100088: sink:transform21
+    100090: sink:transform22
+    100092: sink:transform23
+    100094: sink:transform24
+    100096: sink:transform25
+    100098: sink:transform26
+    100100: sink:transform27
+    100102: sink:transform28
+    100104: sink:transform29
+    100106: sink:transform3
+    100108: sink:transform4
+    100110: sink:transform5
+    100112: sink:transform6
+    100114: sink:transform7
+    100116: sink:transform8
+    100118: sink:transform9
+    100120: //RootNode
+    100122: transform1
+    400000: LAVABO_STRADA_GRIFO_ALPLUS_TRES:Mesh
+    400002: polySurface1
+    400004: polySurface10
+    400006: polySurface11
+    400008: polySurface12
+    400010: polySurface13
+    400012: polySurface14
+    400014: polySurface15
+    400016: polySurface2
+    400018: polySurface3
+    400020: polySurface4
+    400022: polySurface5
+    400024: polySurface9
+    400026: sink2
+    400028: sink:object_10
+    400030: sink:object_11
+    400032: sink:object_12
+    400034: sink:object_15
+    400036: sink:object_16
+    400038: sink:object_17
+    400040: sink:object_18
+    400042: sink:object_19
+    400044: sink:object_20
+    400046: sink:object_21
+    400048: sink:object_22
+    400050: sink:object_23
+    400052: sink:object_5
+    400054: sink:object_6
+    400056: sink:object_7
+    400058: sink:object_8
+    400060: sink:object_9
+    400062: sink:transform1
+    400064: sink:transform10
+    400066: sink:transform11
+    400068: sink:transform12
+    400070: sink:transform13
+    400072: sink:transform14
+    400074: sink:transform15
+    400076: sink:transform16
+    400078: sink:transform17
+    400080: sink:transform18
+    400082: sink:transform19
+    400084: sink:transform2
+    400086: sink:transform20
+    400088: sink:transform21
+    400090: sink:transform22
+    400092: sink:transform23
+    400094: sink:transform24
+    400096: sink:transform25
+    400098: sink:transform26
+    400100: sink:transform27
+    400102: sink:transform28
+    400104: sink:transform29
+    400106: sink:transform3
+    400108: sink:transform4
+    400110: sink:transform5
+    400112: sink:transform6
+    400114: sink:transform7
+    400116: sink:transform8
+    400118: sink:transform9
+    400120: //RootNode
+    400122: transform1
+    2300000: sink:object_23
+    3300000: sink:object_23
+    4300000: sink:object_23
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
