@@ -13,6 +13,7 @@ public class IntroEvents : MonoBehaviour
 
 	public bool introOn = true;
 	public GameObject canvas;
+	public GameObject UIcanvas;
 	public GameObject canvasMngr;
 	public AudioSource doorSound;
 	public Text title;
@@ -57,6 +58,8 @@ public class IntroEvents : MonoBehaviour
 			doorDone = false;
 			alphaGroup.alpha = 1.0f;
 		}
+
+		UIcanvas.SetActive (true);
 	}
 	
 	// Use this for initialization

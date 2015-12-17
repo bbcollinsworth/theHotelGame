@@ -52,7 +52,7 @@ public class clickAction : MonoBehaviour
 			}
 			
 		} else if (Input.mousePosition != prevMouse) {
-			Debug.LogWarning ("Reset transform called");
+			//Debug.LogWarning ("Reset transform called");
 			//cam.transform.position = startPos;
 			//cam.transform.rotation = startRot;
 			//resetFocus ();

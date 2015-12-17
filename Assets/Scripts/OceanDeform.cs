@@ -63,6 +63,11 @@ public class OceanDeform : MonoBehaviour
 	void reset (int day)
 	{
 		switch (day) {
+		case 2:
+			if (!isOpen) {
+				moveCurtain = true;
+			}
+			break;
 		case 1:
 		default:
 			if (isOpen) {
