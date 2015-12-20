@@ -12,6 +12,8 @@ public class IntroEvents : MonoBehaviour
 	AudioSource knockingSound;
 
 	public bool introOn = true;
+
+	//public GameObject
 	public GameObject canvas;
 	public GameObject UIcanvas;
 	public GameObject canvasMngr;
@@ -34,10 +36,27 @@ public class IntroEvents : MonoBehaviour
 	bool startClicked = false;
 
 	bool playIntro = false;
+	
 
-	void Awake ()
+	void prepIntro ()
 	{
-		//canvas.SetActive (true);
+		if (introOn) {
+			canvas.SetActive (true);
+			//canvasMngr.SendMessage ("introOn");
+			timer = 0.5f;
+			timerDone = false;
+			knockingDone = false;
+			doorDone = false;
+			alphaGroup.alpha = 1.0f;
+		}
+
+		//UIcanvas.SetActive (true);
+	}
+	
+	// Use this for initialization
+	void Start ()
+	{
+		canvas.SetActive (true);
 		//timer = 0.5f;
 		//timerDone = false;
 		alphaGroup = canvas.GetComponent<CanvasGroup> ();
@@ -46,27 +65,15 @@ public class IntroEvents : MonoBehaviour
 		endColor = new Color (1.0f, 0.8f, 0.3f, 0.9f);
 		endColor2 = new Color (1.0f, 0.8f, 0.3f, 0.3f);
 		instructionAlpha = 1f;
-	}
 
-	void prepIntro ()
-	{
-		if (introOn) {
-			canvasMngr.SendMessage ("introOn");
-			timer = 0.5f;
-			timerDone = false;
-			knockingDone = false;
-			doorDone = false;
-			alphaGroup.alpha = 1.0f;
-		}
-
-		UIcanvas.SetActive (true);
-	}
-	
-	// Use this for initialization
-	void Start ()
-	{
 		prepIntro ();
 		playIntro = true;
+		if (introOn) {
+			UIcanvas.SetActive (false);
+		} else {
+			UIcanvas.SetActive (true);
+			canvas.SetActive (false);
+		}
 	}
 
 	public void clickStart ()
@@ -93,6 +100,8 @@ public class IntroEvents : MonoBehaviour
 	{
 		if (playIntro) {
 			runIntro ();
+		} else {
+			UIcanvas.SetActive (true);
 		}
 
 
@@ -119,9 +128,9 @@ public class IntroEvents : MonoBehaviour
 
 			if (instructionAlpha > 0) {
 				instructionAlpha -= 0.05f;
-				Color newColor = instructions.GetComponent<Text> ().color;
-				newColor.a = instructionAlpha;
-				instructions.GetComponent<Text> ().color = newColor;
+				Color instrColor = instructions.GetComponent<Text> ().color;
+				instrColor.a = instructionAlpha;
+				instructions.GetComponent<Text> ().color = instrColor;
 			}
 		
 			//knocking and housekeeping sound
@@ -142,15 +151,28 @@ public class IntroEvents : MonoBehaviour
 			//fade out UI
 			if (timer <= 0 && knockingDone) {
 				//Debug.Log ("Door sound" + doorSound.isPlaying);
+				//StartCoroutine ("introDelayedOff");
 				alphaGroup.alpha -= 0.04f;
+
 			}
 
 			if (alphaGroup.alpha <= 0) {
 				Debug.LogWarning ("Intro complete!");
-				canvasMngr.SendMessage ("introOff");
+				canvas.SetActive (false);
+				//canvasMngr.SendMessage ("introOff");
 				playIntro = false;
 			}
 		}
+	}
+
+	IEnumerator introDelayedOff ()
+	{
+		yield return new WaitForSeconds (3.5f);
+		Debug.LogWarning ("Intro complete!");
+
+		//canvas.SetActive (false);
+		//canvasMngr.SendMessage ("introOff");
+		playIntro = false;
 	}
 
 

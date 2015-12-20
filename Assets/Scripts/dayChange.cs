@@ -5,11 +5,14 @@ public class dayChange : MonoBehaviour
 {
 
 	public GameObject skyPanel;
+	public Transform sunOrigin;
+	public GameObject lightning;
 
 	public GameObject[] lights;
 	public Texture[] skies;
 	
 	Material skyMat;
+
 
 	// Use this for initialization
 	void Start ()
@@ -27,6 +30,16 @@ public class dayChange : MonoBehaviour
 	{
 		activateNewSun (day, lights);
 		changeTexture (day, skies);
+
+		switch (day) {
+		case 3:
+			lightning.SetActive (true);
+			break;
+		default:
+			lightning.SetActive (false);
+			break;
+		}
+
 		/*switch (day) {
 		case 2:
 			activateNew (day, lights);
@@ -60,6 +73,8 @@ public class dayChange : MonoBehaviour
 		}
 
 		items [d - 1].SetActive (true);
+
+		sunOrigin.position = items [d - 1].transform.forward * -1f * 300f;
 			
 		/*if (i == d - 1) {
 				items [i].SetActive (true);

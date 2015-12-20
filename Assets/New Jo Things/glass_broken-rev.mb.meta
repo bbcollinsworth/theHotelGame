@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 460a2538abcd04c08882c4f8b1d3091d
+timeCreated: 1450406803
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: glass_broken:polySurface12
+    100004: glass_broken:polySurface13
+    100006: glass_broken:polySurface14
+    100008: glass_broken:polySurface15
+    100010: glass_broken:polySurface16
+    100012: glass_broken:polySurface17
+    100014: glass_broken:polySurface18
+    100016: glass_broken:polySurface19
+    100018: glass_broken:polySurface21
+    100020: glass_broken:polySurface22
+    100022: glass_broken:polySurface35
+    100024: glass_broken:polySurface36
+    100026: glass_broken:polySurface37
+    100028: glass_broken:polySurface38
+    100030: glass_broken:polySurface39
+    100032: glass_broken:polySurface40
+    100034: glass_broken:polySurface41
+    100036: glass_broken:polySurface42
+    100038: glass_broken:pPipe4
+    400000: //RootNode
+    400002: glass_broken:polySurface12
+    400004: glass_broken:polySurface13
+    400006: glass_broken:polySurface14
+    400008: glass_broken:polySurface15
+    400010: glass_broken:polySurface16
+    400012: glass_broken:polySurface17
+    400014: glass_broken:polySurface18
+    400016: glass_broken:polySurface19
+    400018: glass_broken:polySurface21
+    400020: glass_broken:polySurface22
+    400022: glass_broken:polySurface35
+    400024: glass_broken:polySurface36
+    400026: glass_broken:polySurface37
+    400028: glass_broken:polySurface38
+    400030: glass_broken:polySurface39
+    400032: glass_broken:polySurface40
+    400034: glass_broken:polySurface41
+    400036: glass_broken:polySurface42
+    400038: glass_broken:pPipe4
+    2300000: glass_broken:polySurface14
+    2300002: glass_broken:polySurface15
+    2300004: glass_broken:polySurface16
+    2300006: glass_broken:polySurface17
+    2300008: glass_broken:polySurface19
+    2300010: glass_broken:polySurface21
+    2300012: glass_broken:polySurface22
+    2300014: glass_broken:polySurface35
+    2300016: glass_broken:polySurface36
+    2300018: glass_broken:polySurface37
+    2300020: glass_broken:polySurface38
+    2300022: glass_broken:polySurface39
+    2300024: glass_broken:polySurface40
+    2300026: glass_broken:polySurface41
+    2300028: glass_broken:polySurface42
+    3300000: glass_broken:polySurface14
+    3300002: glass_broken:polySurface15
+    3300004: glass_broken:polySurface16
+    3300006: glass_broken:polySurface17
+    3300008: glass_broken:polySurface19
+    3300010: glass_broken:polySurface21
+    3300012: glass_broken:polySurface22
+    3300014: glass_broken:polySurface35
+    3300016: glass_broken:polySurface36
+    3300018: glass_broken:polySurface37
+    3300020: glass_broken:polySurface38
+    3300022: glass_broken:polySurface39
+    3300024: glass_broken:polySurface40
+    3300026: glass_broken:polySurface41
+    3300028: glass_broken:polySurface42
+    4300000: glass_broken:polySurface38
+    4300002: glass_broken:polySurface39
+    4300004: glass_broken:polySurface36
+    4300006: glass_broken:polySurface14
+    4300008: glass_broken:polySurface40
+    4300010: glass_broken:polySurface41
+    4300012: glass_broken:polySurface42
+    4300014: glass_broken:polySurface19
+    4300016: glass_broken:polySurface16
+    4300018: glass_broken:polySurface22
+    4300020: glass_broken:polySurface21
+    4300022: glass_broken:polySurface17
+    4300024: glass_broken:polySurface37
+    4300026: glass_broken:polySurface35
+    4300028: glass_broken:polySurface15
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

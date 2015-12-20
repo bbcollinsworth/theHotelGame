@@ -18,7 +18,7 @@ public class GameStatePersistent : MonoBehaviour
 
 	public roomObjects[] roomItems;
 
-	public string[] roomItemNames;
+	//public string[] roomItemNames;
 	//public Hashtable room = new Hashtable ();
 
 	Dictionary<string,GameObject> room = new Dictionary<string, GameObject> () ;

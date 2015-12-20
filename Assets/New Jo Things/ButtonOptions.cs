@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class ButtonOptions : MonoBehaviour
@@ -12,18 +13,47 @@ public class ButtonOptions : MonoBehaviour
 	bool suitcaseExamined;
 	bool trashEmptied;
 	bool trashExamined;
+	GameObject b1;
+	GameObject b2;
+	static Button button1;
+	static Button button2;
+	static Text button1Text;
+	static Text button2Text;
 	public AudioSource voicemailAudio;
-	public Button button1;
-	public Button button2;
-	public Text button1Text;
-	public Text button2Text;
-	Color transparent;
-	Color buttonPressed;
+
+
+
+
+	[System.Serializable]
+	
+	public struct choiceOptions
+	{
+		public string name;
+		public string option1Text;
+		public string option2Text;
+		public string function1;
+		public string function2;
+	};
+	
+	public choiceOptions[] choiceSetup;
+
+	static Dictionary<string,choiceOptions> choice = new Dictionary<string, choiceOptions> () ;
+
+	static Color transparent;
+	static Color buttonPressed;
 	float FadeoutTime;
 
 	// Use this for initialization
 	void Start ()
 	{
+
+		b1 = transform.Find ("Choice 1 Button").gameObject;
+		b2 = transform.Find ("Choice 2 Button").gameObject;
+		button1 = b1.GetComponent<Button> ();
+		button2 = b2.GetComponent<Button> ();
+		button1Text = b1.GetComponentInChildren<Text> ();
+		button2Text = b2.GetComponentInChildren<Text> ();
+
 		phoneClicked = false;
 		suitcaseClicked = false;
 		trashClicked = false;
@@ -33,9 +63,52 @@ public class ButtonOptions : MonoBehaviour
 		trashExamined = false;
 		transparent = new Color (1f, 1f, 1f, 0f);
 		buttonPressed = new Color (1f, 1f, 1f, 0.4f);
+
 		button1.image.color = transparent;
 		button2.image.color = transparent;
+
+		foreach (choiceOptions i in choiceSetup) {
+			choice [i.name] = i;
+		}
 	}
+
+	public static void showChoice (string item, GameObject clicked)
+	{
+		button1.image.color = buttonPressed;
+		button2.image.color = buttonPressed;
+		button1Text.text = choice [item].option1Text;
+		button2Text.text = choice [item].option2Text;
+		button1.onClick.RemoveAllListeners ();
+		button2.onClick.RemoveAllListeners ();
+
+		button1.onClick.AddListener (() => clicked.SendMessage (choice [item].function1));
+		button2.onClick.AddListener (() => clicked.SendMessage (choice [item].function2));
+
+		button1.onClick.AddListener (() => ButtonTextClear ());
+		button2.onClick.AddListener (() => ButtonTextClear ());
+
+
+		//button1.onClick.AddListener (() => choice [item].function1 ());
+
+		/*switch (item) {
+		case "phone":
+			button1Text.text = choice [item].option1Text;
+			button2Text.text = choice [item].option2Text;
+			break;
+		}*/
+	}
+
+	public void sendChoice (GameObject c, string functionToCall)
+	{
+		c.SendMessage ("functionToCall");
+	}
+
+	/*public static void addChoiceFunctions(void function1, void function2){
+		button1.onClick.RemoveAllListeners();
+		button2.onClick.RemoveAllListeners();
+		button1.onClick.AddListener(()=> function1());
+		button2.onClick.AddListener(()=> function2());
+	}*/
 
 	void showPhoneChoice ()
 	{
@@ -167,7 +240,7 @@ public class ButtonOptions : MonoBehaviour
 		//trashExamined = true;
 	}
 
-	void ButtonTextClear ()
+	public static void ButtonTextClear ()
 	{
 		button1.image.color = transparent;
 		button2.image.color = transparent;

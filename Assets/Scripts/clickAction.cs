@@ -12,6 +12,7 @@ public class clickAction : MonoBehaviour
 	public float clickRange = 20f;
 
 	public LayerMask clickableLayer;
+	public Texture2D clickable;
 
 	Vector3 startPos;
 	Quaternion startRot;
@@ -32,6 +33,7 @@ public class clickAction : MonoBehaviour
 	{
 		//always raycasting from mouse so we can use it to highlight objects
 		Ray mouseRay = Camera.main.ScreenPointToRay (Input.mousePosition);
+		//Ray mouseRay = cam.ScreenPointToRay (Input.mousePosition);
 		//generate ray based on camera view
 		//		Ray lookRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
 		
@@ -40,6 +42,10 @@ public class clickAction : MonoBehaviour
 		if (Physics.Raycast (mouseRay, out hit, clickRange, clickableLayer)) { //, clickableLayer
 
 			Debug.Log ("Raycast Hit detected!");
+
+			//Cursor.SetCursor (clickable, Vector2(0,0), );
+			Cursor.SetCursor (clickable, Vector2.zero, CursorMode.Auto);
+
 			//softFocus (hit.transform);
 
 			if (Input.GetMouseButtonDown (0)) {
@@ -56,6 +62,8 @@ public class clickAction : MonoBehaviour
 			//cam.transform.position = startPos;
 			//cam.transform.rotation = startRot;
 			//resetFocus ();
+		} else {
+			Cursor.SetCursor (null, Vector2.zero, CursorMode.Auto);
 		}
 
 		prevMouse = Input.mousePosition;

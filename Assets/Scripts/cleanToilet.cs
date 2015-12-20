@@ -12,7 +12,7 @@ public class cleanToilet : MonoBehaviour
 	bool lidUp = false;
 	Renderer rend;
 	Renderer rend2;
-	public Color color = new Color (0.2F, 0.5F, 0.9F);
+	public Color col = new Color (0.2F, 0.5F, 0.9F);
 	Color originalColor;
 	float timer;
 	bool flushing;
@@ -72,7 +72,7 @@ public class cleanToilet : MonoBehaviour
 			rend.material.shader = Shader.Find ("Particles/Additive");
 			originalColor = rend.material.GetColor ("_TintColor");
 //			Debug.Log (rend.material.GetColor);
-			rend.material.SetColor ("_TintColor", color);
+			rend.material.SetColor ("_TintColor", col);
 		}
 
 		if (flushCalled) {
@@ -96,7 +96,7 @@ public class cleanToilet : MonoBehaviour
 				Debug.Log (Time.time);
 				rend2.material.shader = Shader.Find ("Particles/Additive");
 				float time = (Time.time * 0.1f);
-				rend2.material.SetColor ("_TintColor", Color.Lerp (color, originalColor, time));
+				rend2.material.SetColor ("_TintColor", Color.Lerp (col, originalColor, time));
 				flushingWater.transform.rotation = Quaternion.Euler (0, 90, 0);
 				timer -= Time.deltaTime;
 			}

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class playerMovement : MonoBehaviour
 {
+
+	public bool mouseHEnabled = false;
 	public float moveUnit;
 	public float rotateUnit;
 	public float mouseRotateUnit = 1f;
@@ -49,19 +51,23 @@ public class playerMovement : MonoBehaviour
 	//void FixedUpdate ()
 	void FixedUpdate ()
 	{
-		centeredMouseX = (Input.mousePosition.x / Screen.width - 0.5f) * 2f;
-		//centeredMouseY = (Input.mousePosition.y / Screen.height - 0.5f) * 2f;
 
-		if (Mathf.Abs (centeredMouseX) > moveZoneMin) {
-			rotH = map (Mathf.Abs (centeredMouseX), moveZoneMin, 1f, 0, mouseRotateUnit);
+		if (mouseHEnabled) {
 
-			if (centeredMouseX < 0) {
-				rotH *= -1f;
+			centeredMouseX = (Input.mousePosition.x / Screen.width - 0.5f) * 2f;
+			//centeredMouseY = (Input.mousePosition.y / Screen.height - 0.5f) * 2f;
+
+			if (Mathf.Abs (centeredMouseX) > moveZoneMin) {
+				rotH = map (Mathf.Abs (centeredMouseX), moveZoneMin, 1f, 0, mouseRotateUnit);
+
+				if (centeredMouseX < 0) {
+					rotH *= -1f;
+				}
+			} else if (rotH > 0.01f) {
+				rotH *= 0.9f;
+			} else {
+				rotH = 0f;
 			}
-		} else if (rotH > 0.01f) {
-			rotH *= 0.9f;
-		} else {
-			rotH = 0f;
 		}
 
 		/*if (Mathf.Abs (centeredMouseY) > moveZoneMin) {
@@ -81,7 +87,7 @@ public class playerMovement : MonoBehaviour
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			moveVector = transform.forward * moveUnit;
-			Debug.Log ("Up arrow key pressed.");
+			//Debug.Log ("Up arrow key pressed.");
 			//body.AddForce (transform.forward * moveUnit);
 			//transform.position += moveVector;//0.1f;//transform.forward * moveUnit;
 

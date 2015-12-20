@@ -27,7 +27,7 @@ public class CustomLook : MonoBehaviour
 		centeredMouseY = (Input.mousePosition.y / Screen.height - 0.5f) * 2f;
 		centeredMouseX = (Input.mousePosition.x / Screen.width - 0.5f) * 2f;
 
-		Debug.LogWarning ("Centered MouseY: " + centeredMouseY);
+		//Debug.LogWarning ("Centered MouseY: " + centeredMouseY);
 
 		if (Mathf.Abs (centeredMouseY) > moveZoneMin) {
 			looking = true;
@@ -55,7 +55,7 @@ public class CustomLook : MonoBehaviour
 			}
 		}
 
-		Debug.LogWarning ("Rot degrees: " + rotationV);
+		//Debug.LogWarning ("Rot degrees: " + rotationV);
 
 		/*float normalizedRot = abs(Input.mousePosition.y - zoneEdge)*maxRot;*/
 
@@ -65,7 +65,7 @@ public class CustomLook : MonoBehaviour
 		if (currentRotV >= 180f) {
 			currentRotV = (currentRotV - 360f);// * -1f;
 		}
-		Debug.LogWarning ("Current Rot V: " + currentRotV);
+		//Debug.LogWarning ("Current Rot V: " + currentRotV);
 
 		if (Mathf.Abs (currentRotV - rotationV) > 0.1f) {
 			Vector3 target = new Vector3 (rotationV, 0f, 0f);

@@ -7,6 +7,8 @@ public class PhoneClick : MonoBehaviour
 	AudioSource dialTone;
 	//public GameObject checklist;
 	public AudioClip voicemailAlert;
+	public AudioClip dialToneClip;
+	public AudioSource voicemailAudio;
 	public GameObject ui;
 	public GameObject phoneX;
 	int d;
@@ -33,6 +35,8 @@ public class PhoneClick : MonoBehaviour
 			break;
 		case 1:
 		default:
+			dialTone.clip = dialToneClip;
+			dialTone.loop = true;
 			break;
 		}
 
@@ -45,12 +49,32 @@ public class PhoneClick : MonoBehaviour
 			audioPlaying = true;
 			dialTone.Play ();
 			if (d == 2) {
-				ui.SendMessage ("showPhoneChoice");
+				//ui.SendMessage ("showChoice", "phone");
+				ButtonOptions.showChoice ("phone", transform.gameObject);
+				//ButtonOptions.addChoiceFunctions (voiceMailListen, voiceMailIgnore);
 			}
 		} else {
 			dialTone.Stop ();
 			audioPlaying = false;
 			phoneX.SetActive (true);
 		}
+	}
+
+	public void voicemailListen ()
+	{
+		if (!voicemailAudio.isPlaying) {
+			Debug.Log ("played phone audio");
+			voicemailAudio.Play ();
+			phoneX.SetActive (true);
+			//UIText.text = "";
+			//button1.image.color = transparent;
+			//phoneClicked = false;
+		}
+	}
+
+	public void voicemailIgnore ()
+	{
+		phoneX.SetActive (true);
+		ButtonOptions.ButtonTextClear ();
 	}
 }

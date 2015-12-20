@@ -4,7 +4,10 @@ using System.Collections;
 public class SuitcaseController : MonoBehaviour
 {
 
+	public GameObject wholeSuitcase;
 	public GameObject lid;
+	public GameObject gun;
+
 	Rigidbody lidBody;
 	public float openForce;
 
@@ -29,8 +32,26 @@ public class SuitcaseController : MonoBehaviour
 	{
 		if (!lidMoving) {
 			if (lidClosed) {
-
+				ButtonOptions.showChoice ("suitcase", transform.gameObject);
+			} else {
+				StartCoroutine ("moveLid", "close");
 			}
+
+			/*if (!lidMoving) {
+			if (lidClosed) {
+				StartCoroutine ("moveLid", "open");
+			} else {
+				StartCoroutine ("moveLid", "close");
+			}*/
+		}
+	}
+
+	void lookInside ()
+	{
+		if (!lidMoving) {
+
+			StartCoroutine ("moveLid", "open");
+
 		}
 	}
 
@@ -39,6 +60,24 @@ public class SuitcaseController : MonoBehaviour
 		float randomRot = Random.Range (10f, 20f);
 
 		transform.Rotate (Vector3.up * randomRot);
+
+		switch (day) {
+		case 1:
+		case 2:
+			wholeSuitcase.SetActive (false);
+			break;
+		case 3:
+			wholeSuitcase.SetActive (true);
+			gun.SetActive (true);
+			break;
+		default:
+			wholeSuitcase.SetActive (true);
+			gun.SetActive (false);
+			if (!lidClosed) {
+				StartCoroutine ("moveLid", "close");
+			}
+			break;
+		}
 	}
 
 	bool lidClosedCheck ()
@@ -63,7 +102,7 @@ public class SuitcaseController : MonoBehaviour
 			lidClosed = true;
 			break;
 		case "open":
-			while (lidRotation ()>180 || lidRotation()<200) {
+			while (lidRotation ()>90 && lidRotation()<200) {
 				lidBody.AddRelativeTorque (Vector3.forward * openForce * -1f);
 				yield return 0;
 			}
@@ -79,4 +118,6 @@ public class SuitcaseController : MonoBehaviour
 	{
 		return lid.transform.localRotation.eulerAngles.z;
 	}
+
+
 }
