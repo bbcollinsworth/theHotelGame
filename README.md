@@ -1,6 +1,4 @@
-# theHotelGame
-
-<i><strong>Room 1206</strong></i><br>
+# <i><strong>Room 1206</strong></i><br>
 Joanna Chin and Bryan Collinsworth
 <br><br>
 <i><strong>Room 1206</strong></i> is an exploratory narrative game in which you play a hotel housekeeper. Every day you clean the same room. As you complete your daily tasks, you encounter the signs and remnants of the guests who are staying there. Personal items, photographs, "garbage" left behind. Some mundane; some hinting at secrets, scandals, the triumphs and failures of human life. How far will you go to uncover the stories of these guests?
